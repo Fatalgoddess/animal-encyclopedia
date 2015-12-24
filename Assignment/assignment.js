@@ -30,11 +30,15 @@ loadcategory(index);
 
 
 //helper for categoryview
+//runs the template and switches the current animal
+//places the new html
 function loadcategory(index){
 current_type = animals_data.category[index];
 var html = albumview_template(current_type);
 $(".content").html(html);
 
+//go even deeper in the information
+//set up the new animal viewing template
 //load up single view
 $(".categoryview_thumbnail").click(function(){
 console.log(current_type);
@@ -48,7 +52,7 @@ $(".content").html(html);
 
 
 
-//Tab work
+//Tab work, making sure the activeness displays correctly
 $("#0").click(function(){
 		$("#ultabs .active").removeClass("active");
 		// then make albums tab active
@@ -64,8 +68,5 @@ $("#2").click(function(){
 		// then make albums tab active
 		$("#birds-navtab").addClass("active");
 });
-
-//Tab work to manually initiate a template without followingthe content
-//template by clicking
 
 });

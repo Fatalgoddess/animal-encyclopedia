@@ -1,8 +1,9 @@
-/* put your css code here */
+/* to keep things in place */
 #outerdiv {
 	position: relative;
 }
 
+/* for the fancy design */
 #middleline{
  color: white;
  background: #eeeeee; 
@@ -11,12 +12,18 @@
  margin-top: 40px;
 }
 
+
+/* these are the main black icon 
+	photos representing the families*/
+
 .animal-photo img{
 	width: 230;
 	height: 270;
 	display: inline-block;
 }
 
+/* on hover let the user know what
+	they can view*/
 .animal-photo:hover + #title {
 	display: inline;
 	margin-bottom: 0px;
@@ -32,6 +39,8 @@
     bottom: 0;
 }
 
+/* these are the photos that show
+	up in category view */
 .categoryview_thumbnail{
 	border:none;
 }
@@ -41,6 +50,9 @@
 	width:auto;
 }
 
+/* these are the single view photos
+	showing up once a user is inside
+	a category*/
 .singleview_thumbnail{
 	border:none;
 }
