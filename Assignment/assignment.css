@@ -1,0 +1,50 @@
+/* put your css code here */
+#outerdiv {
+	position: relative;
+}
+
+#middleline{
+ color: white;
+ background: #eeeeee; 
+ width: 66.6%; 
+ height: 5px;
+ margin-top: 40px;
+}
+
+.animal-photo img{
+	width: 230;
+	height: 270;
+	display: inline-block;
+}
+
+.animal-photo:hover + #title {
+	display: inline;
+	margin-bottom: 0px;
+}
+
+#title {
+	display: none;
+	color: black;
+  	text-align:left;
+  	width: 130px;
+ 	padding: 0px;
+ 	position: absolute;
+    bottom: 0;
+}
+
+.categoryview_thumbnail{
+	border:none;
+}
+.categoryview_thumbnail img{
+	cursor:pointer; 
+	max-height:250px;
+	width:auto;
+}
+
+.singleview_thumbnail{
+	border:none;
+}
+.singleview_thumbnail img{
+	max-height:400px;
+	width:auto;
+}

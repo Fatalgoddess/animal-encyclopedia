@@ -1,0 +1,153 @@
+<!-- This is a first example of using a template -->
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- include our libraries and css files -->
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="AnimalsData.js"></script>
+<script src="assignment.js"></script>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assignment.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!--Page container-->
+<div class = "container-fluid">
+
+<div class = "navbar-fixed-top container-fluid">
+	<!--Start navigation-->
+	<nav class = "navbar navbar-default">
+	<div class = "container-fluid">
+ 		<!--Collapsed navbar-->
+ 		<div class = "navbar-header"> 
+ 			<a href = "index.html" style ="text-decoration:none;"> 
+ 				<img src="images/logo.png"> </a>
+ 			<button
+ 			type ="button"
+ 			class = "
+ 			navbar-toggle collapsed"
+ 			data-toggle = "collapse"
+ 			data-target = "#mainnav"
+ 			aria-expanded ="false">Navigation</button>
+ 			<span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+ 		</div> <!--/Collapsed-->
+		
+ 		<!--Uncollapsed navbar-->
+ 		<div class = "collapse navbar-collapse" id="mainnav">
+ 			<ul class = "nav navbar-nav navbar-right" id ="ultabs">
+ 				<li id="reptiles-navtab"> 
+ 				<a href="#" class="animal-photo" id = "0">
+ 					Reptiles</a><li>
+ 				<li id="mammals-navtab">
+ 				<a href="#" class="animal-photo" id = "1">
+ 					Mammals</a></li>
+ 				<li id="birds-navtab">
+ 				<a href="#" class="animal-photo" id = "2">
+ 					Birds</a></li>
+ 			</ul><!--/Navigation links-->
+ 		</div><!--/Usual nav-->
+ 	</div>
+	</nav><!--/Complete Nav-->
+</div><!--/Fixed navigation bar-->
+
+<!--This is the bit  that will change-->
+<div  class = "content" style="padding-top: 110px;" id ="outerdiv">
+<h2 style ="text-align: center;"> Which animal family would you like to learn about? </h2>
+
+
+<div class ="container-fluid">
+	<div class = "row">
+		<!--First category, trying to align the picture to the horizontal line the naive way-->
+		<div class = "col-xs-12 col-md-6 col-lg-6" style = "padding-left:20%; position:relative; cursor:pointer;">
+			<a class="animal-photo" id = "0">
+				<img src = "images/snake.png" alt = "reptiles-turtle">
+			</a> 
+			<h3 id ="title"> Reptiles</h3>
+		</div>
+
+		<!--Second category-->
+		<div class = "col-xs-12 col-md-6 col-lg-6" style = "padding-left:15%; cursor:pointer;">
+			<a class="animal-photo" id = "2">
+				<img src = "images/eagle.png" alt = "birds-eagle">
+			</a> 
+			<h3 id ="title">Birds</h3>
+		</div>
+	</div><!--/Row-->
+
+<!--Divider-->
+<hr id = "middleline">
+<br>
+
+	<!--Third category-->
+	<div style = "margin-left: 44%; cursor:pointer;">
+		<a class="animal-photo" id = "1">
+			<img src = "images/bear.png" alt = "mammals-dolphin">
+		</a> 
+		<h3 id ="title" style = "margin: 0px;">Mammals</h3>
+	</div>
+
+</div><!--Category container-->
+
+
+</div>
+<!--/Main content-->
+</div>
+<!--/Page container-->
+
+<!--Album view, this is the template for the category/album view where you see the specific animals-->
+<script id="albumview_template" type="text/x-handlebars-template">
+<ol class = "breadcrumb">
+		<li>Animal Types</li>
+		<li>Specific Families</li>
+</ol><!--/breadcrumb-->
+
+    <div class="row">
+      {{#each animals}}
+      <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+        <div class="thumbnail categoryview_thumbnail" data-id="{{@index}}">
+            <img src="{{image1}}" alt="{{name}}" >
+      <div class="caption" style ="text-align:center;">
+        <h4>{{name}}</h4>
+      </div>
+    </div>
+  </div> 
+  {{/each}}
+</div>
+</script>
+
+<!--This is a single animal view-->
+<script id="animalview_template" type="text/x-handlebars-template">
+<ol class = "breadcrumb">
+		<li>Animal Types</li>
+		<li>Specific Families</li>
+		<li>{{name}}</li>
+</ol><!--/breadcrumb-->
+	<h3>{{naame}}</h3>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="thumbnail singleview_thumbnail">
+            <img src="{{image1}}" alt="{{name}}">
+      	</div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="thumbnail singleview_thumbnail">
+            <img src="{{image2}}" alt="{{name}}">
+      	</div>
+      </div>
+    </div>    
+<p>{{description}}</p>
+</script>
+
+</body>
+</html>
